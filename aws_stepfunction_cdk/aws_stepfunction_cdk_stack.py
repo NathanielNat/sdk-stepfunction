@@ -17,8 +17,16 @@ class AwsStepfunctionCdkStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
-        submit_lambda: lambda_.Function
-        get_status_lambda: lambda_.Function
+        submit_lambda =  lambda_.Function( self, 'Submit handler',
+            runtime=lambda_.Runtime.PYTHON_3_8,
+            code=lambda_.Code.from_asset('lambda'),
+            handler='submit.handler',
+            )
+        get_status_lambda =  lambda_.Function( self, 'Get Status handler',
+            runtime=lambda_.Runtime.PYTHON_3_8,
+            code=lambda_.Code.from_asset('lambda'),
+            handler='get_status.handler',
+        )
 
 
         submit_job = tasks.LambdaInvoke(self, "Submit Job",
