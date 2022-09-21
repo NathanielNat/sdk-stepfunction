@@ -1,11 +1,12 @@
 import json
+from urllib import response
 
 def handler(event, context):
-    print('request: {}'.format(json.dumps(event)))
-    return {
-        'statusCode': 200,
-        'headers': {
-            'Content-Type': 'text/plain'
-        },
-        'body': 'Hello, CDK! You have hit {}\n'.format(event['path'])
-    }
+
+    # Pass just the field named "guid" into the Lambda, put the
+        # Lambda's result in a field called "status" in the response
+        # input_path="$.guid",
+        # output_path="$.Payload"
+    response = {}
+    response["status"] = event["guid"]
+    return response
