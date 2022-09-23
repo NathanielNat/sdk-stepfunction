@@ -27,9 +27,9 @@ jobs:
       - name : install pip dependencies 
         run: pip install -r requirements.txt
       - name: Synth stack
-        run: cd aws_stepfunction_cdk && yarn cdk synth
+        run: cd aws_stepfunction_cdk &&  cdk synth
       - name: Deploy stack
-        run: cd aws_stepfunction_cdk && yarn cdk deploy --all --require-approval never
+        run: cd aws_stepfunction_cdk &&  cdk deploy --all --require-approval never
         
         
         
