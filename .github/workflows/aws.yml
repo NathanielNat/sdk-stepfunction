@@ -26,9 +26,6 @@ jobs:
         with:
           python-version: '3.8'
           working-directory: ./aws_stepfunction_cdk/
-      - name: npm install cdk modules
-        env:
-          CI: true
       - run: pip install -r requirements.txt
       - name: Synth stack
         run: cd my-aws-cdk-app && yarn cdk synth
