@@ -32,9 +32,9 @@ jobs:
         run: cd my-aws-cdk-app && yarn cdk synth
       - name: Deploy stack
         run: cd my-aws-cdk-app && yarn cdk deploy --all --require-approval never
-
-        run: |
-
+        
+        
+        
           pwd
 
           npm ci
