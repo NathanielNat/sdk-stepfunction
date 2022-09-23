@@ -23,11 +23,10 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: '3.8'
-          working-directory: ./aws_stepfunction_cdk/
       - name : install pip dependencies 
         run: pip install -r requirements.txt
       - name: Synth stack
-        run: cd aws_stepfunction_cdk &&  cdk synth
+        run: cd aws_stepfunction_cdk && cdk synth
       - name: Deploy stack
         run: cd aws_stepfunction_cdk &&  cdk deploy --all --require-approval never
         
