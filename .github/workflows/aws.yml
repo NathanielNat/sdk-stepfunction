@@ -25,7 +25,13 @@ jobs:
           python-version: '3.8'
       - name : install pip dependencies 
         run: pip install -r requirements.txt && sudo npm install -g aws-cdk
+      # - name: Synth stack
+      #   run: cd aws_stepfunction_cdk && cdk synth
+      # - name: Deploy stack
+      #   run: cd aws_stepfunction_cdk &&  cdk deploy --all --require-approval never
+      - name: Install dependencies
+        run: yarn
       - name: Synth stack
-        run: cd aws_stepfunction_cdk && cdk synth
+        run: yarn cdk synth
       - name: Deploy stack
-        run: cd aws_stepfunction_cdk &&  cdk deploy --all --require-approval never   
+        run: yarn cdk deploy --all --require-approval never   
