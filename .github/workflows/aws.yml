@@ -30,8 +30,8 @@ jobs:
       # - name: Deploy stack
       #   run: cd aws_stepfunction_cdk &&  cdk deploy --all --require-approval never
       - name: Install dependencies
-        run: yarn
+        run: pip install -r requirements.txt && sudo npm install -g aws-cdks
       - name: Synth stack
-        run: yarn cdk synth
+        run:  cdk synth
       - name: Deploy stack
-        run: yarn cdk deploy --all --require-approval never   
+        run:  cdk deploy --all --require-approval never   
