@@ -24,7 +24,7 @@ jobs:
         with:
           python-version: '3.8'
       - name : install pip dependencies 
-        run: pip install -r requirements.txt
+        run: pip install -r requirements.txt && sudo npm install -g aws-cdk
       - name: Synth stack
         run: cd aws_stepfunction_cdk && cdk synth
       - name: Deploy stack
