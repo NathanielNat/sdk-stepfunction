@@ -29,14 +29,3 @@ jobs:
         run: cd aws_stepfunction_cdk && cdk synth
       - name: Deploy stack
         run: cd aws_stepfunction_cdk &&  cdk deploy --all --require-approval never   
-      - name: cdk synth
-
-        id: synth
-
-        run: npx cdk synth
-
-      - name: cdk deploy
-
-        id: cdk
-
-        run: npx cdk deploy --require-approval never
