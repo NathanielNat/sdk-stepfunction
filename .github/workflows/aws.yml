@@ -28,14 +28,7 @@ jobs:
       - name: Synth stack
         run: cd aws_stepfunction_cdk && cdk synth
       - name: Deploy stack
-        run: cd aws_stepfunction_cdk &&  cdk deploy --all --require-approval never
-        
-        
-        
-          pwd
-
-          npm ci
-
+        run: cd aws_stepfunction_cdk &&  cdk deploy --all --require-approval never   
       - name: cdk synth
 
         id: synth
